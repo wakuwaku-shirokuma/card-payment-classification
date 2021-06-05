@@ -1,28 +1,3 @@
-//元の記述
-//import logo from './logo.svg';
-//import './App.css';
-
-//function App() {
-//  return (
-//    <div className="App">
-//      <header className="App-header">
-//        <img src={logo} className="App-logo" alt="logo" />
-//        <p>
-//          Edit <code>src/App.js</code> and save to reload.
-//        </p>
-//        <a
-//          className="App-link"
-//          href="https://reactjs.org"
-//          target="_blank"
-//          rel="noopener noreferrer"
-//        >
-//          Learn React
-//        </a>
-//      </header>
-//    </div>
-//  );
-//}
-
 //export default App;
 import React, { Component } from 'react';
 import Form from './Form';
@@ -62,11 +37,31 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="siimple-box siimple--bg-dark">
-        <h1 className="siimple-box-title siimple--color-white">カードの支払いチェックリスト</h1>
-        <Form handleAdd={this.handleAdd}/>
-        <div className="siimple-rule"></div>
-        <List todos={this.state.todo} handleRemove={this.handleRemove}/>
+      <div>
+        {/*ナビゲーション*/}
+        <nav style={{ background: "#666" }}>
+          <ul style={{ display: 'flex', listStyle: 'none' }}>
+            <li style={{ margin: 10 }}><a href="/" style={{ color: "#fff", textDecoration: 'none' }}>Home</a></li>
+            <li style={{ margin: 10 }}><a href="/about" style={{ color: "#fff", textDecoration: 'none' }}>About</a></li>
+          </ul>
+        </nav>
+        {/*ヘッダー*/}
+        {/*
+        <header style={{ height: 200, background: "#ddd", padding: 20}}>
+          header
+        </header>
+        */}
+        {/*メインコンテンツ*/}
+        <div className="siimple-box siimple--bg-dark">
+          <h1 className="siimple-box-title siimple--color-white">カードの支払いチェックリスト</h1>
+          <Form handleAdd={this.handleAdd}/>
+          <div className="siimple-rule"></div>
+          <List todos={this.state.todo} handleRemove={this.handleRemove}/>
+        </div>
+        {/*フッター*/}
+        <footer style={{ height: 100, background: "#666", color: "#fff", padding: 20 }}>
+          footer
+        </footer>
       </div>
     );
   }
